@@ -67,6 +67,9 @@ void event_loop_add_file(event_loop *loop,
 /* Remove a registered file event handler from the event loop. */
 void event_loop_remove_file(event_loop *loop, int fd);
 
+/* Remove a set file events from a registered file descriptor. */
+void event_loop_remove_file_events(event_loop *loop, int fd, int events);
+
 /** Register a handler that will be called after a time slice of
  *  "timeout" milliseconds.
  *

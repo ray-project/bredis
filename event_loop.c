@@ -42,6 +42,10 @@ void event_loop_remove_file(event_loop *loop, int fd) {
   aeDeleteFileEvent(loop, fd, EVENT_LOOP_READ | EVENT_LOOP_WRITE);
 }
 
+void event_loop_remove_file_events(event_loop *loop, int fd, int events) {
+  aeDeleteFileEvent(loop, fd, events);
+}
+
 int64_t event_loop_add_timer(event_loop *loop,
                              int64_t timeout,
                              event_loop_timer_handler handler,
